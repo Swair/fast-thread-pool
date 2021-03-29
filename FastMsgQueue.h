@@ -50,10 +50,10 @@ class FastMsgQueue
         {
             if(maxlen == 0)
                 maxlen = 10240;
-            mem_.reset(new Mem(maxlen));
+            mem_.reset(new Mem(2 * maxlen));
             msgPutCount_ = 0;
             msgGetCount_ = 0;
-            msgMaxCount_ = maxlen / 2; 
+            msgMaxCount_ = maxlen; 
             nonblock_ = 0;
         }
 
